@@ -1,0 +1,43 @@
+.bg404{
+    background-color: rgb(0, 19, 37);
+    z-index: 10;
+    top: 0px;
+    left: 0px;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+}
+.w404{
+    background:url(../img/back404.png);
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+    background-size:100vw 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    top: 0px;
+    text-align: center;
+    padding: 20px;
+}
+.w404in{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: aliceblue;
+    width: 100vw;
+}
+.w-404 h2{
+    color: #f0f8ff;
+    font-size: 80px;
+    padding: 0px;
+    margin: 0px;
+    line-height: 100px;
+}
+.w404 .button{
+    background-color: rgb(236,184,10);
+    border-radius: 20px;
+    border: none;
+    padding: 3px 13px;
+}
