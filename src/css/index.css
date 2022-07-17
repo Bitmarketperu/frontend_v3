@@ -86,6 +86,13 @@
     background-position: center;
     min-height: 90vh;
 }
+.swapSection{
+    min-height: 90vh;
+    color: aliceblue;
+}
+.bg-b{
+    background-color: var(--darkBlue2);
+}
 button{
     border: none;
     border-radius: 20px;
@@ -93,4 +100,7 @@ button{
     align-items: center;
     padding: 3px 10px;
     position: relative;
+}
+.pad{
+    padding: 40px 20px;
 }

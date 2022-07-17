@@ -1,0 +1,77 @@
+:root{
+    --darkBlue:rgb(13,32,44);
+    --darkBlue2:rgb(18,44,59);
+    --yellow:rgb(236,184,10);
+}
+.grafic{
+    min-height: 300px;
+    border-radius: 20px;
+    background-color: var(--darkBlue);
+    padding: 20px;
+}
+.swapSection{
+    min-height: 300px;
+    border-radius: 20px;
+    background-color: var(--darkBlue);
+    padding: 20px;
+    color: aliceblue;
+}
+.swapSection p{
+    text-align: center;
+    font-size: 14px;
+    font-weight: 300;
+    color: rgb(118, 146, 168);
+}
+.swapSection h2{
+    text-align: center;
+    color: aliceblue;
+    font-size: 20px;
+}
+.swapSection hr{
+    background-color: rgba(49, 104, 129, 0.575);
+}
+.swapSection img{
+    height: 25px;
+}
+.swapSection input{
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.253);
+    color: aliceblue;
+    padding: 0px 20px 0px 0px;
+    text-align: end;
+    height: 50px;
+}
+.arrow{
+    height: 12px !important;
+}
+.select{
+    display: flex;
+    align-items: center;
+}
+.dobleArrowWrap{
+    display: flex;
+    justify-content: center;
+}
+.dobleArrowCircle{
+    background-color: rgba(0, 0, 0, 0.253);
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.swapSection button{
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    border: none;
+    background-color: var(--yellow);
+    color: var(--darkBlue);
+    padding: 0px 20px 0px 0px;
+    height: 50px;
+}

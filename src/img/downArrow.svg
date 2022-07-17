@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="400px"
+   height="400px"
+   viewBox="0 0 400 400"
+   version="1.1"
+   id="SVGRoot"
+   sodipodi:docname="downArrow.svg"
+   inkscape:version="1.2 (56b05e47e7, 2022-06-09, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview12690"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="1.1993833"
+     inkscape:cx="181.76008"
+     inkscape:cy="211.35863"
+     inkscape:window-width="1366"
+     inkscape:window-height="650"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs12685" />
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="opacity:0.904307;fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:53.1553;stroke-dasharray:none;stroke-opacity:1"
+       d="M 21.881875,111.79034 199.58651,299.2951 377.33991,112.58274"
+       id="path12251"
+       sodipodi:nodetypes="ccc" />
+  </g>
+</svg>
