@@ -1,11 +1,10 @@
 import { NavLink } from 'react-router-dom'
 import logo from '../../img/isotipoBitmarket.png'
-import walletImg from '../../img/wallet.png'
 const Nav = ()=>{
     return <div className='principal-nav'>
     <div className='container-nav'>
         <div className='nav-section-1'>
-            <img src={logo} alt="" srcset="" /> 
+            <img src={logo} alt="" srcSet="" /> 
             BitmarketPeru
         </div>
         <div className='nav-section-2'>
@@ -18,10 +17,13 @@ const Nav = ()=>{
             <NavLink to='/swap' className='nav-link'>
                 Swap
             </NavLink>
+            <div className='mx-3 yellow'>
+                5 <i className='bi-bell-fill' />
+            </div>
             <button className='connect-btn'> 
                 <div className='external-circle'>
                     <div className='internal-circle'>
-                        <img className='walletimg' src={walletImg} alt="" /> 
+                        <i className='bi-wallet2 text-white' ></i>
                     </div>
                 </div> 
                 <div>

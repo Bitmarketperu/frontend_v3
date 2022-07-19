@@ -50,19 +50,41 @@
 .select{
     display: flex;
     align-items: center;
+    color: rgb(118, 146, 168);
+    transition: 0.25s;
+}
+.select:hover{
+    color: aliceblue;
+    cursor: pointer;
+}
+.select:active{
+    transform: translateY(2px);
+}
+button:active{
+    transform: translateY(2px);
 }
 .dobleArrowWrap{
     display: flex;
     justify-content: center;
 }
+
 .dobleArrowCircle{
-    background-color: rgba(0, 0, 0, 0.253);
-    width: 35px;
-    height: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.25);
+    width: 35px !important;
+    height: 35px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 50% !important;
+}
+.dobleArrowCircle:hover{
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.dobleArrowCircle:active{
+    background-color: rgb(8, 60, 73);
+    transform: scale(0.9);
+
 }
 
 .swapSection button{
