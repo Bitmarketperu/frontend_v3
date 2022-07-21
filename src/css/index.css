@@ -302,3 +302,9 @@ ul{
 .deleteButton:hover{
     color: var(--lightBlue);
 }
+.adminUserWallet{
+    color: var(--lightBlue);
+    font-size: 13px;
+    border-bottom: 1px solid var(--darkBlue);
+    padding-bottom: 5px;
+}

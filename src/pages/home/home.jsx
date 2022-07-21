@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react"
+import { useContext } from "react"
 //import { useState } from "react"
 //import Web3 from "web3"
 import styles from '../../css/home/home.module.css'
@@ -6,8 +6,8 @@ import llama from '../../img/llama.png'
 import { NavLink } from 'react-router-dom'
 import Loader from "../../components/loader/Loader"
 import { DataContext } from "../../context/DataContext"
-
 //const web3 = new Web3("https://bsc-dataseed.binance.org/")
+
 const Home = ()=>{
  
     const {loading} = useContext(DataContext)
@@ -49,21 +49,3 @@ const Home = ()=>{
 }
 
 export default Home
-
-					{/* <select id="swal-input1" class="swal2-input">
-						<option value=""> - Seleccione - </option>
-						<option value="bcp">(BCP) - Banco de Crédito del Perú</option>
-						<option value="interbank">(Interbank) - Banco Internacional del Perú</option>
-						<option value="bbva">(BBVA) - BBVA Continental</option>
-						<option value="banbif">(BanBif) - BanBif</option>
-						<option value="scotiabank">(Scotiabank) - Scotiabank</option>
-						<option value="falabella">(Falabella) - Banco Falabella</option>
-						<option value="financiero">(Financiero) - Banco Financiero</option>
-						<option value="bancomercio">(Bancomercio) - Banco de Comercio</option>
-						<option value="citibank">(Citibank) - Citibank Perú</option>
-						<option value="mibanco">(Mibanco) - Mi Banco</option>
-						<option value="gnb">(GNB) - Banco GNB</option>
-						<option value="ripley">(Ripley) - Banco Ripley</option>
-						<option value="nacion">(Nacion) - Banco de la Nación</option>
-						<option value="pichincha">(Pichincha) - Banco Pichincha</option>
-					</select> */}
