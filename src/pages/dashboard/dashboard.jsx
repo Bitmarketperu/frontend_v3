@@ -42,12 +42,15 @@ const Dashboard = () => {
             console.log(body)
             const res = await axios.post(apiUrl + "bank" , body)
             console.log(res.data.response)
+            getBank()
         }   
     }
 
-    const deleteBanc = ()=>{
-
-    }
+    const deleteBanc = async (_id)=>{
+        const res = await axios.put(apiUrl + "bank/" + _id)
+        console.log(res.data.response)
+        getBank()
+    }   
 
     const getBank = async ()=>{
         const bankList = await axios.get(apiUrl + "bank/" + wallet)
@@ -74,24 +77,24 @@ const Dashboard = () => {
                             <span> Elija su banco </span>
                             <select onChange={(e)=>setName(e.target.value)} className='form-control' name="" id="">
                                 <option value="1"> - Elija un banco -</option>
-                                <option value="bcp">BCP</option>
-                                <option value="bbva">BBVA</option>
-                                <option value="scotiabank">ScotiaBank</option>
-                                <option value="interbank">Interbank</option>
+                                <option value="BCP">BCP</option>
+                                <option value="BBVA">BBVA</option>
+                                <option value="Scotiabank">ScotiaBank</option>
+                                <option value="Interbank">Interbank</option>
                             </select>
 
                             <span> Moneda </span>
                             <select onChange={(e)=>setMoney(e.target.value)}  className='form-control' name="" id="">
-                                <option value="1"> - Elija una money - </option>
-                                <option value="sol">Soles</option>
-                                <option value="dolar">Dolares</option>
+                                <option value="1"> - Elija una moneda - </option>
+                                <option value="Soles">Soles</option>
+                                <option value="Dolares">Dolares</option>
                             </select>
 
                             <span> Tipo de cuenta </span>
                             <select onChange={(e)=>setAccountType(e.target.value)}  className='form-control' name="" id="">
                                 <option value="1"> - Elija un tipo de cuenta - </option>
-                                <option value="ahorros">Ahorros</option>
-                                <option value="corriente">Corriente</option>
+                                <option value="Ahorros">Ahorros</option>
+                                <option value="Corriente">Corriente</option>
                             </select>
 
                             <span> Numero de cuenta </span>
@@ -149,23 +152,21 @@ const Dashboard = () => {
                             
                             {banks ? banks.map((item)=>{
                                 return (
-                                <div className='mt-1'>
+                                <div key={item._id} className='mt-1'>
                                 <div className={styles.bList}>
                                     <div className={styles.bListIn}>
                                         <img src={bcp} alt="" />
                                         <div>
-                                            <h4>{item.name} - {item.money}</h4>
-                                            <b>{item.titular}</b>
+                                            <h4>{item.name.toUpperCase()} - {item.money}</h4>
+                                            <b>{item.number} <br/> {item.titular}</b>
                                             <h3>{item.type}</h3>
                                         </div>
                                     </div>
-                                    <i className='bi-trash'/>
+                                    <i onClick={()=>deleteBanc(item._id)} className='bi-trash deleteButton'/>
                                 </div>
                             </div> 
-    )}):
-                            <>
-                            No posee bancos registrados
-                            </>}
+                            )}):
+                            <>No posee bancos registrados</>}
                             
                         </div>
                         </div>
@@ -175,22 +176,9 @@ const Dashboard = () => {
                             <p> Debe conectar su cartera de metamask para visualizar su informacion de usuario </p>
                         </div>
                     </div>}
-                    
-
                 </div>
             </div>
         </div>
     )
 }
 export default Dashboard
-/*
-Bancos
-    Nombre del banco  
-    tipo de cuenta 
-    tipo de money 
-    titular 
-
-transacciones
-
-Perfil nombre correo telefono
-*/

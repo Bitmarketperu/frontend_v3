@@ -247,13 +247,13 @@ a{
 }
 .adminMenu{
     padding: 10px 20px;
+    color: var(--lightBlue);
+    user-select: none;
 }
 .adminMenu:hover{
     background: rgba(0, 0, 0, 0.3);
     cursor: pointer;
     border-radius: 10px;
-}
-.adminMenu a:hover{
     color: aliceblue;
 }
 .sideMenu{
@@ -295,4 +295,10 @@ ul{
 .adminPercent div{
     font-size: 24px;
     margin: 0px 30px;
+}
+.deleteButton{
+    cursor: pointer;
+}
+.deleteButton:hover{
+    color: var(--lightBlue);
 }

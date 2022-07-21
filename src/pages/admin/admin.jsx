@@ -1,77 +1,49 @@
+import { useState } from "react"
+import Porcentajes from "../../components/admin/porcentajes"
+import Usuarios from "../../components/admin/usuarios"
+import Bancos from "../../components/admin/bancos"
+import Transacciones from "../../components/admin/transacciones"
 const Admin = ()=>{
+
+    const [menu,setMenu] = useState(1)
+
     return (
     <div className="container">
         <div className="row">
             <div className="col-3 sideMenu">
                 <div className="adminHeader">
-                    <h3> Jason Hernandez </h3>
-                    <p> Admin account </p>
+                    <h3> Administrador </h3>
+                    <p> Nivel 1 </p>
                 </div>
                 <ul>
                     <li className="adminMenu">
-                        <a href="">
+                        <div onClick={()=>setMenu(1)}>
                             <i className="bi-percent"/> Porcentajes
-                        </a>
+                        </div>
                     </li>
                     <li className="adminMenu">
-                        <a href="">
+                        <div onClick={()=>setMenu(2)}>
                             <i className="bi-people"/> Usuarios
-                        </a>
+                        </div>
                     </li>
                     <li className="adminMenu">
-                        <a href="">
+                        <div onClick={()=>setMenu(3)}>
                             <i className="bi-bank"/> Bancos
-                        </a>
+                        </div>
+                    </li>
+                    <li className="adminMenu">
+                        <div onClick={()=>setMenu(4)}> 
+                            <i className="bi-card-list"/> Transacciones
+                        </div>
                     </li>
                 </ul>
                 {/* */}
             </div>
             <div className="col-9 text-white p-5">
-            <div className="changes">
-                    <div>
-                        USDT - Dolares 
-                    </div>
-                    <div className="adminPercent">
-                        <input type="text" value={"5"} />
-                        <div> % </div>
-                        <button> Save </button>
-                    </div>
-                </div>
-                <div className="changes">
-                    <div>
-                        USDT - Soles 
-                    </div>
-                    <div className="adminPercent">
-                        <input type="text" value={"5"} />
-                        <div> % </div>
-                        <button> Save </button>
-                    </div>
-                </div>
-                <div className="changes">
-                    <div>
-                       Soles - USDT 
-                    </div>
-                    <div className="adminPercent">
-                        <input type="text" value={"5"} />
-                        <div> % </div>
-                        <button> Save </button>
-                    </div>
-                </div>
-                <div className="changes">
-                    <div>
-                       Dolares - USDT 
-                    </div>
-                    <div className="adminPercent">
-                        <input type="text" value={"5"} />
-                        <div> % </div>
-                        <button> Save </button>
-                    </div>
-                </div>
-
-
-            {/* Administrar porcentajes de los cambios<br/>
-                listar usuarios, eliminar, editar<br/>
-                listar, agregar, eliminar, editar bancos<br/>  */}
+                {menu === 1 && <Porcentajes />}
+                {menu === 2 && <Usuarios />}
+                {menu === 3 && <Bancos />}
+                {menu === 4 && <Transacciones />}
             </div>
         </div>
     </div>)
