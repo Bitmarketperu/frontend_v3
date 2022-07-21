@@ -4,6 +4,7 @@ import Home from "./pages/home/home";
 import E404 from "./pages/404/404";
 import Dashboard from "./pages/dashboard/dashboard";
 import Swap from "./pages/swap/swap";
+import Admin from "./pages/admin/admin";
 
 const Router = () => {
     return (
@@ -22,6 +23,9 @@ const Router = () => {
             </Route>
             <Route path="/swap">
                 <Swap />
+            </Route>
+            <Route path="/admin">
+                <Admin/>
             </Route>
         </Switch>
     )

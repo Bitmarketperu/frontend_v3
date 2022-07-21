@@ -65,3 +65,24 @@
     margin: 0px;
     color: var(--lightBlue);
 }
+.noConnectedArea{
+    padding-top: 100px;
+    text-align: center;
+}
+.noConnectedArea button{
+    background-color: var(--yellow);
+    padding: 5px 20px;
+    margin-bottom: 10px;
+}
+.saveBtn{
+    width: 100%;
+    background-color: var(--yellow);
+    margin-top: 20px;
+    height: 40px;
+}
+.saveBtnDisabled{
+    width: 100%;
+    background-color:rgba(170, 170, 170, 0.726);
+    margin-top: 20px;
+    height: 40px;
+}

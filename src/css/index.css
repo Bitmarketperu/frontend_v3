@@ -187,3 +187,112 @@ button{
     padding: 0px;
     margin: 0px;
 }
+.bgtransparentDark{
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+}
+.spinner-border{
+    width: 60px;
+    height: 60px;
+}
+.bankModalBody{
+    background-color: var(--darkBlue);
+    min-height: 30vw;
+    max-height: 90vh;
+    min-width: 30vw;
+    max-width: 90vw;
+    color: aliceblue;
+    border-radius: 15px;
+    position: absolute;
+    overflow-y: scroll;
+}
+.bankModalBody::-webkit-scrollbar{
+    width: 0px;
+}
+.backOptions{
+    padding: 20px;
+}
+.backOptions img{
+    height: 20px;
+}
+.backOptions span{
+    color: var(--lightBlue);
+    font-size: 14px;
+}
+ul{
+    list-style: none;
+}
+a{
+    color: aliceblue;
+    text-decoration: none;
+}
+.adminHeader{
+    padding: 10px 0px 0px 0px;
+}
+.adminHeader h3{
+    color: aliceblue;
+    padding: 0px;
+    margin: 0px;
+}
+.adminHeader p{
+    color: var(--lightBlue);
+}
+.adminMenu{
+    padding: 10px 20px;
+}
+.adminMenu:hover{
+    background: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    border-radius: 10px;
+}
+.adminMenu a:hover{
+    color: aliceblue;
+}
+.sideMenu{
+    border-right: 1px solid var(--darkBlue);
+    min-height: 400px;
+    padding: 10px;
+}
+ul{
+    padding: 0px;
+}
+.changes{
+    border-bottom: 1px solid var(--darkBlue);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.changes input{
+    width: 50px;
+    background: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.247);
+    color: aliceblue;
+    text-align: center;
+    font-size: 24px;
+}
+.changes button{
+    background-color: var(--yellow);
+    padding: 8px;
+    width: 80px;
+}
+.adminPercent{
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+}
+.adminPercent div{
+    font-size: 24px;
+    margin: 0px 30px;
+}
