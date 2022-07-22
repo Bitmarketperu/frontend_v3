@@ -272,7 +272,7 @@ ul{
     align-items: flex-end;
 }
 .changes input{
-    width: 50px;
+    width: 100px;
     background: transparent;
     border-top: none;
     border-left: none;
@@ -311,4 +311,18 @@ ul{
 .lb{
     color: var(--lightBlue);
     font-size: 12px;
+}
+.saveChanges{
+    padding-top: 30px;
+    display: flex;
+    justify-content: end;
+}
+.saveChanges button{
+    background-color: var(--yellow);
+    padding: 10px 20px;
+}
+
+.usuariosModalBody{
+    padding: 20px;
+    color: aliceblue;
 }

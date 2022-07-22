@@ -3,6 +3,7 @@ import Porcentajes from "../../components/admin/porcentajes"
 import Usuarios from "../../components/admin/usuarios"
 import Bancos from "../../components/admin/bancos"
 import Transacciones from "../../components/admin/transacciones"
+import Config from "../../components/admin/config"
 const Admin = ()=>{
 
     const [menu,setMenu] = useState(1)
@@ -36,6 +37,11 @@ const Admin = ()=>{
                             <i className="bi-card-list"/> Transacciones
                         </div>
                     </li>
+                    <li className="adminMenu">
+                        <div onClick={()=>setMenu(5)}> 
+                            <i className="bi-boxes"/> Configuracion
+                        </div>
+                    </li>
                 </ul>
                 {/* */}
             </div>
@@ -44,6 +50,7 @@ const Admin = ()=>{
                 {menu === 2 && <Usuarios />}
                 {menu === 3 && <Bancos />}
                 {menu === 4 && <Transacciones />}
+                {menu === 5 && <Config />}
             </div>
         </div>
     </div>)

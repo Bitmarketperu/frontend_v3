@@ -1,11 +1,17 @@
 import axios from "axios"
 import { useEffect,useContext, useState } from "react"
 import { DataContext } from '../../context/DataContext'
-
+import Loader from "../loader/Loader"
 const Usuarios = ()=>{
 
-    const { apiUrl } = useContext(DataContext)
+    const { apiUrl,wallet,loading,setLoading } = useContext(DataContext)
+
     const [users,setUsers] = useState(false)
+    const [modal,setModal] = useState(false)
+    const [user,setUser] = useState(false)
+    const [name,setName] = useState(false)
+    const [email,setEmail] = useState(false)
+    const [phone,setPhone] = useState(false)
 
     useEffect(()=>{
         getUsers()
@@ -21,11 +27,61 @@ const Usuarios = ()=>{
         let x = id.toString()
         return x.substr(x.length - 8, 8) 
     }
-    const editUser = (_id)=>{
-        alert("Editando: "+ _id )
+
+    const sendFormData = async (e)=>{
+        setLoading(true)
+        setModal(false)
+        e.preventDefault()
+        let body = {
+            _id: user._id,
+            wallet,
+            name,
+            email,
+            phone
+        }
+        const res = await axios.put(apiUrl + "user/",body)
+        await getUsers()
+        setLoading(false)
+    }
+
+    const userData = (user)=>{
+        setUser(user)
+        setName(user.name)
+        setPhone(user.phone)
+        setEmail(user.email)
+        setModal(true)
     }
 
     return (<>
+        {loading && <Loader/>}
+        {modal && <div className="bgtransparentDark">
+            <div className='modal-display'>
+                <div className='modalHeader'>
+                    <div>
+                        Editando Usuario <br />
+                    <div className="lb">{user._id}</div>
+                    </div>
+                    <div>
+                        <i onClick={()=>setModal(false)} className='bi-x x'></i>
+                    </div>
+                </div>
+                <div className="usuariosModalBody">
+                    <form action="" onSubmit={(e)=>sendFormData(e)}>
+                        <span> <i className='bi-people'/> Nombre completo</span>
+                        <input  onChange={(e)=>setName(e.target.value)}  value={name}  className='form-control mb-2' type="text" placeholder='Escriba el nombre' required/>
+
+                        <span> <i className='bi-envelope'/> Correo Electronico </span>
+                        <input  value={email} onChange={(e)=>setEmail(e.target.value)} className='form-control mb-2' type="email" placeholder='Correo electronico' required/>
+                        
+                        <span> <i className='bi-telephone'/> Numero de telefono </span>
+                        <input value={phone}  onChange={(e)=>setPhone(e.target.value)} className='form-control mb-2' type="text" placeholder='Numero de telefono' required/>
+                        <div className="saveChanges">
+                            <button> Guardar </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>}
         <div className="container">
             <div className="row">
                 <div className="col-12">
@@ -45,7 +101,7 @@ const Usuarios = ()=>{
                     <div className="col-4">{!item.email ? "n/a" : item.email}</div>
                     <div className="col-2">{!item.phone ? "n/a" : item.phone}</div>
                     <div className="col-1">
-                        <button onClick={()=>editUser(item._id)} > <i className="bi-wrench"></i> </button>
+                        <button onClick={()=>userData(item)}> <i className="bi-wrench"></i> </button>
                     </div>
                     <div className="col-12 adminUserWallet"> {item.wallet} </div>
                 </div>
