@@ -1,6 +1,6 @@
 const Transacciones = ()=>{
     return (<>
-        transacciones
+        Esto para el final
     </>)
 }
 export default Transacciones

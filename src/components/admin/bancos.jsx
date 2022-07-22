@@ -1,6 +1,7 @@
+import Bank from "../bank/bank"
 const Bancos = ()=>{
     return (<>
-        Bancos
+        <Bank />
     </>)
 }
 export default Bancos

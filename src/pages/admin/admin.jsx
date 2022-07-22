@@ -33,13 +33,13 @@ const Admin = ()=>{
                         </div>
                     </li>
                     <li className="adminMenu">
-                        <div onClick={()=>setMenu(4)}> 
-                            <i className="bi-card-list"/> Transacciones
+                        <div onClick={()=>setMenu(5)}> 
+                            <i className="bi-boxes"/> Configuracion
                         </div>
                     </li>
                     <li className="adminMenu">
-                        <div onClick={()=>setMenu(5)}> 
-                            <i className="bi-boxes"/> Configuracion
+                        <div onClick={()=>setMenu(4)}> 
+                            <i className="bi-card-list"/> Transacciones
                         </div>
                     </li>
                 </ul>
@@ -49,8 +49,8 @@ const Admin = ()=>{
                 {menu === 1 && <Porcentajes />}
                 {menu === 2 && <Usuarios />}
                 {menu === 3 && <Bancos />}
-                {menu === 4 && <Transacciones />}
                 {menu === 5 && <Config />}
+                {menu === 4 && <Transacciones />}
             </div>
         </div>
     </div>)
