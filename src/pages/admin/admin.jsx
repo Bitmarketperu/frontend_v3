@@ -8,9 +8,9 @@ const Admin = ()=>{
     const [menu,setMenu] = useState(1)
 
     return (
-    <div className="container">
+    <div className="container-xxl">
         <div className="row">
-            <div className="col-3 sideMenu">
+            <div className="col-2 sideMenu">
                 <div className="adminHeader">
                     <h3> Administrador </h3>
                     <p> Nivel 1 </p>
@@ -39,7 +39,7 @@ const Admin = ()=>{
                 </ul>
                 {/* */}
             </div>
-            <div className="col-9 text-white p-5">
+            <div className="col-10 text-white p-5">
                 {menu === 1 && <Porcentajes />}
                 {menu === 2 && <Usuarios />}
                 {menu === 3 && <Bancos />}

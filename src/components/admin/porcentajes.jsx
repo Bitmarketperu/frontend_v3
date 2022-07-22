@@ -4,25 +4,32 @@ import { DataContext } from "../../context/DataContext"
 const Porcentajes = ()=>{
 
     const {apiUrl} = useContext(DataContext)
+    const [usdtDolares,setUsdtDolares] = useState(0)
+    const [usdtSoles,setUsdtSoles] = useState(0)
+    const [solesUsdt,setSolesUsdt] = useState(0)
+    const [dolaresUsdt,setDolaresUsdt] = useState(100)
+
+    const [maxSol,setMaxSol] = useState(false)
+    const [maxDol,setMaxDol] = useState(false)
+    const [maxCrypto,setMaxCrypto] = useState(false)
+    const [limSol,setLimSol] = useState(false)
+    const [limDol,setLimDol] = useState(false)
 
     useEffect(()=>{
-        //getPercents()
+        getConfig()
     },[])
 
-    const getPercents = async ()=>{
-        const res = await axios.get(apiUrl + "percents")
-        const percents = res.data.response
-        console.log(percents)
-        setUsdtDolares(percents[0])
-        setUsdtSoles(percents[1])
-        setSolesUsdt(percents[2])
-        setDolaresUsdt(percents[3])
+    const getConfig = async ()=>{
+        const res = await axios.get(apiUrl + "config")
+        const config = res.data.response
+        console.log(config)
+        setUsdtDolares(config.dolInp)
+        setUsdtSoles(config.dolOut)
+        setSolesUsdt(config.solOut)
+        setDolaresUsdt(config.solInp)
     }
 
-    const [usdtDolares,setUsdtDolares] = useState(3)
-    const [usdtSoles,setUsdtSoles] = useState(4)
-    const [solesUsdt,setSolesUsdt] = useState(5)
-    const [dolaresUsdt,setDolaresUsdt] = useState(4)
+    
     
     return (<>
         <div>

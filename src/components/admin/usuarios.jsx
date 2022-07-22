@@ -1,5 +1,4 @@
 import axios from "axios"
-import { layouts } from "chart.js"
 import { useEffect,useContext, useState } from "react"
 import { DataContext } from '../../context/DataContext'
 
@@ -36,15 +35,15 @@ const Usuarios = ()=>{
             <div className="row yellow">
                 <div className="col-3">Nombre</div>
                 <div className="col-2">Id</div>
-                <div className="col-3">Email</div>
-                <div className="col-3">Telefono</div>
+                <div className="col-4">Email</div>
+                <div className="col-2">Telefono</div>
                 <div className="col-1"></div>
             </div>
             {users && users.map((item)=> <div key={item._id} className="row my-3">
                     <div className="col-3">{!item.name ? "n/a" : item.name}</div>
                     <div className="col-2">{ last(item._id) }</div>
-                    <div className="col-3">{!item.email ? "n/a" : item.email}</div>
-                    <div className="col-3">{!item.phone ? "n/a" : item.phone}</div>
+                    <div className="col-4">{!item.email ? "n/a" : item.email}</div>
+                    <div className="col-2">{!item.phone ? "n/a" : item.phone}</div>
                     <div className="col-1">
                         <button onClick={()=>editUser(item._id)} > <i className="bi-wrench"></i> </button>
                     </div>

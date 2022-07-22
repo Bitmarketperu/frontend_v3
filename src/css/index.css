@@ -308,3 +308,7 @@ ul{
     border-bottom: 1px solid var(--darkBlue);
     padding-bottom: 5px;
 }
+.lb{
+    color: var(--lightBlue);
+    font-size: 12px;
+}
