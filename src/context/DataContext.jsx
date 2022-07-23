@@ -15,6 +15,7 @@ export const DataProvider = ({ children }) => {
     const [loading,setLoading] = useState(false)
     const [wallet,setWallet] = useState(false)
     const [user,setUser] = useState(false)
+    const [config,setConfig] = useState(false)
 
     useEffect(()=>{connect()},[])
 
@@ -33,8 +34,9 @@ export const DataProvider = ({ children }) => {
             const body = {
                 wallet
             }
-            const res = await axios.post(apiUrl+"auth",body)
-            console.log(res.data.response)
+            const res = await axios.post(apiUrl+ "auth",body)
+            const res2 = await axios.get(apiUrl + "config")
+            setConfig(res2.data.request)
             setUser(res.data.response)
             setWallet(wallet)
             setLoading(false)
@@ -47,7 +49,7 @@ export const DataProvider = ({ children }) => {
     const context = {
         connect,wallet,
         loading,setLoading,
-        apiUrl, user
+        apiUrl, user,config
     }
 
     return (
