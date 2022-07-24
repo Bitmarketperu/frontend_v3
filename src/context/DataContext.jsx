@@ -16,6 +16,7 @@ export const DataProvider = ({ children }) => {
     const [wallet,setWallet] = useState(false)
     const [user,setUser] = useState(false)
     const [config,setConfig] = useState(false)
+    const [darkMode, setDarkMode] = useState(true)
 
     useEffect(()=>{connect()},[])
 
@@ -49,7 +50,8 @@ export const DataProvider = ({ children }) => {
     const context = {
         connect,wallet,
         loading,setLoading,
-        apiUrl, user,config
+        apiUrl, user,config,
+        darkMode, setDarkMode
     }
 
     return (

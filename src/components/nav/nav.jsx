@@ -3,17 +3,19 @@ import logo from '../../img/isotipoBitmarket.png'
 import { DataContext } from '../../context/DataContext'
 import { useContext } from 'react'
 import Resume from '../../services/resumeWallet'
+import DarkMode from '../darkMode/DarkMode'
 const Nav = ()=>{
 
-    const { wallet,connect } = useContext(DataContext)
+    const { wallet,connect, darkMode, setDarkMode } = useContext(DataContext)
 
-    return <div className='principal-nav'>
+    return <div className={`${darkMode ? "principal-nav": "principal-nav-light"}`}>
     <div className='container-nav'>
         <div className='nav-section-1'>
             <img src={logo} alt="" srcSet="" /> 
-            BitmarketPeru
+            <span className={`${!darkMode && "nav-text-logo"}`}>BitmarketPerú</span>
         </div>
         <div className='nav-section-2'>
+            <DarkMode setDarkMode={setDarkMode} darkMode={darkMode} />
             <NavLink to='/home' className='nav-link'>
                 Home
             </NavLink>

@@ -5,6 +5,8 @@
     --yellow2:rgba(187, 146, 12, 0.733);
     --lightBlue:rgb(118, 146, 168);
     --white:aliceblue;
+    --lightModa: #ecf7ff;
+    --lightNav: #ecf6ff;
 }
 .yellow{
     color: var(--yellow);
@@ -15,7 +17,14 @@
 .principal-nav{
     background-color: var(--darkBlue);
     padding: 8px;
+    transition: all 0.3s ease;
 }
+.principal-nav-light{
+    background-color: var(--lightNav);
+    padding: 8px;
+    transition: all 0.3s ease;
+}
+
 .container-nav{
     justify-content: space-between;
     align-items: center;
@@ -28,6 +37,11 @@
     font-size: 20px;
     font-weight: bold;
 }
+
+.nav-text-logo{
+    color: var(--darkBlue2) !important;
+}
+
 .nav-section-1 img{
     height: 35px;
     color: aliceblue;

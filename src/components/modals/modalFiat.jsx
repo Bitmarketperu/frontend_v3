@@ -1,5 +1,6 @@
 import FiatList from '../coinList/fiatList'
-const ModalFiat = ({setModalFiat}) =>{
+const ModalFiat = ({setModalFiat,select}) =>{
+
     return <div className="modal-wrapper">
         <div className="modal-display">
             <div className="modalHeader">
@@ -13,7 +14,7 @@ const ModalFiat = ({setModalFiat}) =>{
                 </div>
             </div>
             <div className="modalContent">
-                <FiatList />
+                <FiatList select={select}/>
             </div>
         </div>
     </div>

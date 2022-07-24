@@ -2,9 +2,12 @@ import usd from '../../img/monedas/usd.png'
 import sol from '../../img/monedas/sol.png'
 import efectivo from '../../img/monedas/efectivo.png'
 
-const FiatList = ()=>{
+const FiatList = ({select})=>{
+
+    
+
     return (<>
-        <div className='coinList'>
+        <div onClick={()=>select("DolaresTransferencia")} className='coinList'>
             <img src={usd} alt="" />
             <div className='mx-2'>
                 <div>

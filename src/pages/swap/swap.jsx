@@ -13,10 +13,18 @@ function Swap() {
     const [modalFiat,setModalFiat] = useState(false)
     const [modalCrypto,setModalCrypto] = useState(false)
     const [changeType,setChangeType] = useState(true)
+    const [crypto,setCrypto] = useState("")
+    const [fiat,setFiat] = useState("")
+    const [selectedFiat,setSelectedFiat] = useState()
+    const [selectedCrypto,setSelectedCrypto] = useState()
+
+    const select = (coin)=>{
+        alert(coin)
+    }
 
     return (
         <div className="container-fluid">
-            {modalFiat && <ModalFiat setModalFiat={setModalFiat}/>}
+            {modalFiat && <ModalFiat setModalFiat={setModalFiat} select={select}/>}
             {modalCrypto && <ModalCrypto setModalCrypto={setModalCrypto}/>}
             <div className='container'>
                 <div className="row">
@@ -38,7 +46,7 @@ function Swap() {
                                         <i className="bi-chevron-down"></i>
                                     </div>
                                 </div>
-                                <input type="text" placeholder='0.0' name="" id="" />
+                                <input onChange={(e)=>setCrypto(e.target.value)} type="text" placeholder='0.0' value={crypto} />
                             </>:<>
                                 <div className='mb-2 d-flex'>
                                     <div onClick={()=>setModalFiat(true)} className={styles.select}>
@@ -47,12 +55,12 @@ function Swap() {
                                         <i className="bi-chevron-down"></i>
                                     </div>
                                 </div>
-                                <input type="text" placeholder='0.0' name="" id="" />
+                                <input onChange={(e)=>setFiat(e.target.value)} type="text" placeholder='0.00' name="2" id="2" value={fiat} />
                             </>}
                             
 
-                            <div onClick={()=>setChangeType(!changeType)} className={styles.dobleArrowWrap}>
-                                <div className={styles.dobleArrowCircle}>
+                            <div className={styles.dobleArrowWrap}>
+                                <div onClick={()=>setChangeType(!changeType)}  className={styles.dobleArrowCircle}>
                                     <img src={dobleArrow} alt="" />
                                 </div>
                             </div>
@@ -65,7 +73,7 @@ function Swap() {
                                         <i className="bi-chevron-down"></i>
                                     </div>
                                 </div>
-                                <input type="text" placeholder='0.0' name="" id="" />
+                                <input onChange={(e)=>setFiat(e.target.value)} type="text" placeholder='0.00' name="2" id="2" value={fiat} />
                             </>:<>
                                 <div className='mb-2 d-flex'>
                                     <div onClick={()=>setModalCrypto(true)} className={styles.select}>
@@ -74,7 +82,7 @@ function Swap() {
                                         <i className="bi-chevron-down"></i>
                                     </div>
                                 </div>
-                                <input type="text" placeholder='0.0' name="" id="" />
+                                <input onChange={(e)=>setCrypto(e.target.value)} type="text" placeholder='0.00' name="2" id="2" value={crypto} />
                             </>}
 
                           
