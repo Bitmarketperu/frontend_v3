@@ -1,5 +1,5 @@
 import CoinList from '../coinList/coinList'
-const ModalCrypto = ({setModalCrypto}) =>{
+const ModalCrypto = ({setModalCrypto,selectCrypto}) =>{
     return <div className="modal-wrapper">
         <div className="modal-display">
             <div className="modalHeader">
@@ -13,7 +13,7 @@ const ModalCrypto = ({setModalCrypto}) =>{
                 </div>
             </div>
             <div className="modalContent">
-                <CoinList />
+                <CoinList selectCrypto={selectCrypto}/>
             </div>
         </div>
     </div>

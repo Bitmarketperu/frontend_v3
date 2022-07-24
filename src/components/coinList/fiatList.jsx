@@ -1,11 +1,7 @@
-import usd from '../../img/monedas/usd.png'
 import sol from '../../img/monedas/sol.png'
 import efectivo from '../../img/monedas/efectivo.png'
-
+import usd from '../../img/monedas/usd.png'
 const FiatList = ({select})=>{
-
-    
-
     return (<>
         <div onClick={()=>select("DolaresTransferencia")} className='coinList'>
             <img src={usd} alt="" />
@@ -16,7 +12,7 @@ const FiatList = ({select})=>{
                 </div>
             </div>
         </div>
-        <div className='coinList'>
+        <div onClick={()=>select("SolesTransferencia")} className='coinList'>
             <img src={sol} alt="" />
             <div className='mx-2'>
                 <div>
@@ -25,7 +21,7 @@ const FiatList = ({select})=>{
                 </div>
             </div>
         </div>
-        <div className='coinList'>
+        <div onClick={()=>select("EfectivoSoles")} className='coinList'>
             <img src={efectivo} alt="" />
             <div className='mx-2'>
                 <div>
@@ -34,7 +30,7 @@ const FiatList = ({select})=>{
                 </div>
             </div>
         </div>
-        <div className='coinList'>
+        <div onClick={()=>select("EfectivoDolares")} className='coinList'>
             <img src={efectivo} alt="" />
             <div className='mx-2'>
                 <div>

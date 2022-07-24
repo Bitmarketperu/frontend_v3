@@ -17,6 +17,7 @@ export const DataProvider = ({ children }) => {
     const [user,setUser] = useState(false)
     const [config,setConfig] = useState(false)
     const [darkMode, setDarkMode] = useState(true)
+    const [comision,setComision] = useState(false)
 
     useEffect(()=>{connect()},[])
 
@@ -37,7 +38,8 @@ export const DataProvider = ({ children }) => {
             }
             const res = await axios.post(apiUrl+ "auth",body)
             const res2 = await axios.get(apiUrl + "config")
-            setConfig(res2.data.request)
+            setConfig(res2.data.response)
+            setComision(res2.data.response.solOut)
             setUser(res.data.response)
             setWallet(wallet)
             setLoading(false)
@@ -51,7 +53,8 @@ export const DataProvider = ({ children }) => {
         connect,wallet,
         loading,setLoading,
         apiUrl, user,config,
-        darkMode, setDarkMode
+        darkMode, setDarkMode,
+        comision,setComision
     }
 
     return (
